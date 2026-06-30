@@ -1,0 +1,33 @@
+{
+  "slug": "goohw",
+  "agency": "GOOHW",
+  "coverColor": "#1a1a1a",
+  "accentColor": "#FF6B35",
+  "coverImage": "",
+  "personPhoto": "",
+  "coverHeadline": "ONLINE GROWTH IS NEVER LUCK — IT'S BUILT ON STRATEGY",
+  "personName": "GOOHW B.V.",
+  "personTitle": "Owner – GOOHW B.V.",
+  "personLocation": "Roosendaal, The Netherlands",
+  "coverBlurb": "GOOHW is a data-driven growth agency that transforms online presence into measurable, sustainable business results through clarity, consistency, and structured strategy.",
+  "photoCredit": "",
+  "articleHeadline": "DATA-DRIVEN GROWTH: TURNING ONLINE SUCCESS INTO A STRUCTURED SYSTEM",
+  "articleSubheadline": "How GOOHW B.V. is proving that organic online growth is an engineered discipline, not a lucky accident",
+  "articleImage": "",
+  "articleBody": [
+    "Online growth is never a coincidence — it is the result of a deliberate, structured process built on strategy, content, and data-driven decisions that align audience needs with algorithm behaviour.",
+    "At GOOHW, growth is not treated as something unpredictable or magical, but as something engineered through clarity, consistency, and intention. The agency transforms deep insight into clear, actionable strategies built around long-term performance, not shortcuts.",
+    "With a 100% organic growth approach, GOOHW focuses on strategies designed for lasting impact. Every engagement is built on data, structured for trust, and optimised for the long term. This means no paid shortcuts — only sustainable systems that compound over time.",
+    "How GOOHW b.v Works: Staying Ahead in an AI-Driven World. As algorithms evolve and AI reshapes digital landscapes, GOOHW continuously refines its systems to ensure clients stay visible, relevant, and growing — whatever the platform shift."
+  ],
+  "pullQuote": "Online growth should be structured, trust-building, and achievable — because it is built on data, not luck.",
+  "pullQuoteAuthor": "GOOHW B.V., Roosendaal, The Netherlands",
+  "websiteUrl": "goohw.nl",
+  "website": "goohw.nl",
+  "services": ["100% Organic Growth", "Content Strategy", "SEO", "Data Analytics", "Digital Consulting"],
+  "highlights": [
+    {"value": "100%", "label": "Organic Growth"},
+    {"value": "B2B", "label": "Focus"},
+    {"value": "NL", "label": "Based"}
+  ]
+}

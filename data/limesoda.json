@@ -1,0 +1,31 @@
+{
+  "slug": "limesoda",
+  "agency": "LIMESODA",
+  "coverColor": "#0d1117",
+  "accentColor": "#8BC34A",
+  "coverImage": "",
+  "personPhoto": "",
+  "coverHeadline": "INSIDE THE MINDS SHAPING MODERN MARKETING",
+  "personName": "PHILIPP PFALLER",
+  "personTitle": "CEO & Partner – LIMESODA",
+  "personLocation": "Vienna, Austria",
+  "coverBlurb": "LIMESODA led by Dr. Philipp Pfaller, is a Vienna-based digital powerhouse that blends strategy, design, and technology to craft high-performing, scalable digital experiences built for real-world impact.",
+  "photoCredit": "Photo Credit: Daniel Shaked",
+  "articleHeadline": "DR. PHILIPP PFALLER: ONE OF VIENNA'S TOP DIGITAL AGENCY LEADERS",
+  "articleSubheadline": "How LIMESODA built Austria's leading digital consultancy through relentless innovation and measurable impact",
+  "articleImage": "",
+  "articleBody": [
+    "Dr. Philipp Pfaller and his partners have established LIMESODA as one of Austria's leading digital agencies, earning major recognition including Best E-commerce Agency in Austria (Anton Award), the National BGF Award for workplace health among 1,200+ companies, and the lab webAD Sustainability Award, along with certification as a state-recognised family-friendly employer.",
+    "Beyond agency leadership, he is an active industry voice, appearing on platforms such as ZIB Magazin, where he has spoken about AI influencers and the importance of transparency, and is regularly featured in Austrian media including Die Presse, OTS Presse, and Werbemonitor, sharing insights on digital strategy, agency growth, and workplace culture.",
+    "This philosophy is embedded in LIMESODA's work, delivering high-performing digital experiences that combine UX/UI development, e-commerce, CMS platforms like TYPO3 and WordPress, and ERP/CRM integrations focused on conversion, speed, security, accessibility, and measurable impact."
+  ],
+  "pullQuote": "LIMESODA operates on a simple belief: reliability and creativity are the twin engines of exceptional digital work.",
+  "pullQuoteAuthor": "Dr. Philipp Pfaller, CEO & Partner, LIMESODA",
+  "services": ["UX/UI Development", "E-Commerce", "CMS (TYPO3 & WordPress)", "ERP/CRM Integration", "Digital Strategy"],
+  "website": "limesoda.at",
+  "highlights": [
+    {"value": "20+", "label": "Years in Digital"},
+    {"value": "200+", "label": "Projects Delivered"},
+    {"value": "AT/DE", "label": "Markets Active"}
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "slug": "retzking",
+  "agency": "RETZKING",
+  "coverColor": "#0a1628",
+  "accentColor": "#3B82F6",
+  "coverImage": "",
+  "personPhoto": "",
+  "coverHeadline": "FROM 30+ BRANDS TO 3+ YEAR PARTNERSHIPS",
+  "personName": "ESRA KÜÇÜKYALÇIN",
+  "personTitle": "Founder – Retzking",
+  "personLocation": "",
+  "coverBlurb": "Retzking operates as a strategic partner that helps brands build structured, consistent, and meaningful communication systems — bridging content with strategy to drive long-term growth.",
+  "photoCredit": "",
+  "articleHeadline": "ESRA ON CLARITY, POSITIONING AND THE FUTURE OF BRAND GROWTH",
+  "articleSubheadline": "How Retzking evolved from content production to brand strategy — and why less is always more",
+  "articleImage": "",
+  "articleBody": [
+    "Esra Küçükyalçın's advice to businesses is simple yet often overlooked: less content, more clarity. Instead of focusing on producing more material, she emphasises the importance of clearly defining what a brand stands for and ensuring that message is communicated consistently across every touchpoint.",
+    "In her view, strong positioning and purposeful communication will always outperform high content volume without direction. Looking ahead to the next 2–5 years, Esra predicts that while content creation will become increasingly accessible through technology, the real differentiators will be strategy, positioning, and storytelling.",
+    "As the digital landscape becomes more saturated, brands that invest in these deeper layers of communication will be the ones that stand out and sustain attention. This thinking has also shaped Retzking's evolution, moving from pure content production to a more strategic role.",
+    "Retzking is built on a modern, flat culture that replaces rigid hierarchy with collaboration and transparency. Working across sectors including consulting and retail has strengthened the agency's ability to adapt quickly — shaping more tailored and impactful strategies for each client."
+  ],
+  "pullQuote": "Less content, more clarity. Strong positioning and purposeful communication will always outperform high content volume without direction.",
+  "pullQuoteAuthor": "Esra Küçükyalçın, Founder, Retzking",
+  "statHeadline": "From 30+ Brands to 3+ Year Partnerships",
+  "statBody": "Where Stories Turn Into Long-Term Value — this journey has led to collaborations with more than 30 companies and ongoing partnerships built on trust and strategy.",
+  "services": ["Brand Strategy", "Content Strategy", "Communication Systems", "Positioning", "Storytelling"],
+  "website": "retzking.com",
+  "highlights": [
+    {"value": "30+", "label": "Brands Served"},
+    {"value": "3+", "label": "Year Partnerships"},
+    {"value": "TR", "label": "Based"}
+  ]
+}

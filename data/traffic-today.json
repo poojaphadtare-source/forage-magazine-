@@ -1,0 +1,32 @@
+{
+  "slug": "traffic-today",
+  "agency": "TRAFFIC TODAY",
+  "coverColor": "#1a0a0a",
+  "accentColor": "#F0C040",
+  "coverImage": "",
+  "personPhoto": "",
+  "coverHeadline": "SCALING GROWTH THROUGH AUTONOMY",
+  "personName": "JESSE MACHIELS",
+  "personTitle": "Business Lead – Traffic Today",
+  "personLocation": "Overijssel, Netherlands",
+  "coverBlurb": "Traffic Today is a performance marketing agency built on a culture of autonomy, where 90+ specialists work in a flat, self-managing structure that eliminates bureaucracy and accelerates results.",
+  "photoCredit": "",
+  "articleHeadline": "HOW TRAFFIC TODAY REDEFINES PERFORMANCE MARKETING",
+  "articleSubheadline": "Founded in 2017, Traffic Today's flat, autonomous structure of 90+ specialists is reshaping what modern agencies can achieve",
+  "articleImage": "",
+  "articleBody": [
+    "That's where Traffic Today, founded in 2017 and operating across the Netherlands, has built its reputation. What makes Traffic Today truly unique is not just what they do, but how they do it.",
+    "Instead of a traditional agency hierarchy, Traffic Today operates using a model that allows the team to move faster, adapt quicker, and focus entirely on client outcomes. Rather than layers of management that slow execution, Traffic Today has built a system that does the opposite.",
+    "At Traffic Today, a team of 90+ specialists is organised into focused pods — combining the scale of a large agency with the responsiveness and accountability of a small, dedicated team. Each pod operates with full ownership of their client's growth.",
+    "What makes Traffic Today truly unique is not just what they do, but how they do it — the agency combines scale with accessibility, supporting businesses of all sizes with performance marketing that delivers consistent, measurable results."
+  ],
+  "pullQuote": "Traffic Today redefines performance marketing by removing the barriers between strategy and execution — leaving only results.",
+  "pullQuoteAuthor": "Jesse Machiels, Business Lead, Traffic Today",
+  "services": ["Performance Marketing", "Paid Social", "SEO & Content", "Conversion Optimisation", "Data Analytics"],
+  "website": "traffic-today.nl",
+  "highlights": [
+    {"value": "90+", "label": "Specialists"},
+    {"value": "2017", "label": "Founded"},
+    {"value": "NL", "label": "Based"}
+  ]
+}

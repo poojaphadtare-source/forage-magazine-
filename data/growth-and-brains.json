@@ -1,0 +1,35 @@
+{
+  "slug": "growth-and-brains",
+  "agency": "GROWTH AND BRAINS",
+  "coverColor": "#0a0a14",
+  "accentColor": "#D4A017",
+  "coverImage": "",
+  "personPhoto": "",
+  "coverHeadline": "WHERE NEUROSCIENCE MEETS MARKETING PRECISION",
+  "personName": "ANDREW REDFERN",
+  "personTitle": "Founder – Growth and Brains",
+  "personLocation": "Liverpool, England",
+  "coverBlurb": "Growth & Brains is a performance marketing agency redefining how brands understand and influence customer behaviour by blending neuroscience, behavioural psychology, and data-driven strategy.",
+  "photoCredit": "",
+  "articleHeadline": "WHERE NEUROSCIENCE MEETS MARKETING PRECISION",
+  "articleSubheadline": "Andrew Redfern on why understanding how people think is the ultimate competitive advantage in modern marketing",
+  "articleImage": "",
+  "articleBody": [
+    "Growth & Brains is a performance marketing agency redefining how brands understand and influence customer behaviour. Founded on the principle that marketing should mirror how people actually decide — not just how they browse — the agency blends neuroscience, behavioural psychology, and data-driven strategy to create campaigns that connect on an instinctive level.",
+    "Led by a founder with over two decades of experience in digital marketing, published research in brand reputation mining, and an MBA from the University of Liverpool, Growth & Brains operates at the intersection of commercial strategy and human psychology.",
+    "Alongside leading the agency, Andrew Redfern also serves as Chairman of the UKH Foundation, a UK-based charity that has contributed over £3.5 million to health-related causes across the North West of England.",
+    "A real-world example: Ripe Thinking's Golf Care mobile homepage was underperforming because a key incentive — the free gift — was being overlooked. Traditional optimisation methods like A/B testing or eye-tracking would have taken weeks to fix. Instead, Growth & Brains applied behavioural science to rapidly identify and solve the issue, delivering a 33% uplift in golf insurance conversions."
+  ],
+  "pullQuote": "Growth & Brains stands for a simple but powerful belief: when you understand how people think, marketing stops being guesswork and starts becoming growth science.",
+  "pullQuoteAuthor": "Andrew Redfern, Founder, Growth and Brains",
+  "caseStudyHeadline": "How Neuroscience Transformed Mobile Conversions in Insurance Marketing",
+  "caseStudyStat": "33% uplift in golf insurance conversions",
+  "caseStudyBody": "By applying behavioural science and AI to Ripe Thinking's Golf Care homepage, Growth & Brains rapidly identified why a key incentive was being overlooked — and fixed it in a fraction of the time traditional methods would have taken.",
+  "services": ["Neuroscience-Led Marketing", "Behavioural Psychology", "Performance Marketing", "Conversion Optimisation", "Brand Reputation Research"],
+  "website": "growthandbrains.com",
+  "highlights": [
+    {"value": "33%", "label": "Avg Conversion Uplift"},
+    {"value": "20+", "label": "Years Experience"},
+    {"value": "UK", "label": "Based"}
+  ]
+}

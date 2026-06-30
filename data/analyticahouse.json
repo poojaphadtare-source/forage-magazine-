@@ -1,0 +1,34 @@
+{
+  "slug": "analyticahouse",
+  "agency": "ANALYTICAHOUSE",
+  "coverColor": "#0d0d0d",
+  "accentColor": "#FF6B00",
+  "coverImage": "",
+  "personPhoto": "",
+  "coverHeadline": "#NEVERENOUGH — THE MINDSET BEHIND MEASURABLE GROWTH",
+  "personName": "HÜDA ÖKSÜZ",
+  "personTitle": "Managing Partner – AnalyticaHouse",
+  "personLocation": "Istanbul, Türkiye",
+  "coverBlurb": "AnalyticaHouse operates on a #neverenough mindset, blending data, creativity, and performance into a unified system that turns insights into measurable growth, delivering marketing driven by continuous evolution, precision, and impact.",
+  "photoCredit": "",
+  "articleHeadline": "ANALYTICAHOUSE: RADICAL CURIOSITY, MEASUREMENT INTELLIGENCE, AND DATA-DRIVEN GROWTH",
+  "articleSubheadline": "How a #neverenough mindset and unified digital ecosystem are redefining performance marketing in Türkiye and beyond",
+  "articleImage": "",
+  "articleBody": [
+    "It's a space shaped by speed, automation, and original thinking, where feedback flows openly, adaptability is constant, and every individual contributes with an entrepreneurial spirit.",
+    "At its core, the agency is built to drive digital innovation, turning insights into marketing that drives growth. This philosophy is not just a statement, but a system, where SEO, performance marketing, creative solutions, and data science are not treated as separate functions, but as parts of a unified, multidimensional digital environment working in sync.",
+    "Partnering with visionary and innovative businesses, AnalyticaHouse goes beyond visibility. As a Meta Business Partner and Google Premier Partner, the team combines access, expertise, and strategic intelligence to deliver marketing that is not only seen, but felt in results.",
+    "In practice, this means operating in a #neverenough mindset where continuous improvement is the practice, not the goal. Decisions are shaped by a balance of data and intuition, ensuring that every campaign is both measurable and meaningful. Rather than reacting to change, the team builds systems that adapt in real time — connecting signals across channels and turning complexity into clarity."
+  ],
+  "pullQuote": "Because in a world full of content, real success doesn't come from being seen — it comes from revolutionizing value.",
+  "pullQuoteAuthor": "Hüda Öksüz, Managing Partner, AnalyticaHouse",
+  "caseStudyHeadline": "How AnalyticaHouse Transformed Corendon Airlines' Media Strategy",
+  "caseStudyBody": "AnalyticaHouse's partnership with Corendon Airlines demonstrates the agency's ability to combine high-fidelity data operations with creative precision to deliver measurable media outcomes at scale.",
+  "services": ["SEO & Performance Marketing", "Data Science & Analytics", "Creative Solutions", "Meta & Google Advertising", "Media Strategy"],
+  "website": "analyticahouse.com",
+  "highlights": [
+    {"value": "50+", "label": "Global Clients"},
+    {"value": "2", "label": "Premier Partnerships"},
+    {"value": "TR+", "label": "International Reach"}
+  ]
+}

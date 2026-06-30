@@ -1,0 +1,20 @@
+{
+  "title": "FRAMEWORK",
+  "tagline": "By Kilowott",
+  "issue": "Issue #004",
+  "date": "April 2026",
+  "coverHeadline": "INSIDE THE MINDS SHAPING MODERN MARKETING",
+  "coverSubheadline": "7 Global Agencies. 7 Stories. One Magazine.",
+  "coverColor": "#0a0a14",
+  "accentColor": "#F0B429",
+  "coverImage": "/images/1777275292236.jfif",
+  "agencyList": [
+    "LIMESODA",
+    "ANALYTICAHOUSE",
+    "TRAFFIC TODAY",
+    "GOOHW",
+    "FLOW CRE8TIVE",
+    "RETZKING",
+    "GROWTH AND BRAINS"
+  ]
+}

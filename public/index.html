@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Framework Magazine – Template Editor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600;1,6..72,700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/magazine.css">
+</head>
+<body>
+
+<!-- ─── TOOLBAR ─── -->
+<div class="editor-toolbar no-print" id="editorToolbar">
+  <div class="toolbar-left">
+    <div class="toolbar-brand">
+      <span class="toolbar-diamond">◆</span>
+      <span class="toolbar-title">FRAMEWORK</span>
+      <span class="toolbar-by">by Kilowott</span>
+    </div>
+  </div>
+  <div class="toolbar-right">
+    <button class="btn-add-page" id="addPageBtn">+ Add Page</button>
+    <button class="btn-pdf" id="pdfBtn">&#128438; Download PDF</button>
+  </div>
+</div>
+
+<!-- ─── LAYOUT ─── -->
+<div class="app-layout">
+
+  <!-- Sidebar -->
+  <aside class="sidebar no-print" id="sidebar">
+    <div class="sidebar-header">
+      <span>PAGES</span>
+      <div class="sb-header-actions">
+        <button class="sb-folder-btn" id="sbNewFolderBtn" title="New Folder">📁+</button>
+        <button class="sb-add-btn" id="sbAddBtn">+</button>
+      </div>
+    </div>
+    <div class="sidebar-list" id="sidebarList"></div>
+  </aside>
+
+  <!-- Canvas -->
+  <main class="pages-container" id="pagesContainer"></main>
+
+</div>
+
+<!-- ─── ADD PAGE MENU ─── -->
+<div class="add-menu-overlay hidden" id="addMenuOverlay"></div>
+<div class="add-page-menu hidden" id="addPageMenu">
+  <div class="add-menu-header">Add a page</div>
+  <div class="add-menu-grid">
+    <button class="add-menu-card" data-add-type="cover">
+      <div class="amc-icon" style="background:#0B1426;">
+        <span style="color:#C9A84C;font-family:'Bebas Neue',sans-serif;font-size:13px;">FRAMEWORK</span>
+      </div>
+      <div class="amc-label">Cover Page</div>
+      <div class="amc-sub">Full-bleed hero with photo</div>
+    </button>
+    <button class="add-menu-card" data-add-type="article">
+      <div class="amc-icon" style="background:#fff;border:1px solid #e0d9cc;">
+        <div style="height:3px;background:#C9A84C;margin-bottom:4px;"></div>
+        <div style="height:2px;background:#e0d9cc;margin-bottom:6px;"></div>
+        <div style="display:flex;gap:4px;">
+          <div style="flex:1;background:#f0ece4;height:28px;border-radius:1px;"></div>
+          <div style="flex:1;background:#f0ece4;height:28px;border-radius:1px;"></div>
+        </div>
+      </div>
+      <div class="amc-label">Int Page- Temp 1</div>
+      <div class="amc-sub">Two-column editorial layout</div>
+    </button>
+    <button class="add-menu-card" data-add-type="vision">
+      <div class="amc-icon" style="background:#0B1426;">
+        <span style="color:#C9A84C;font-size:24px;font-family:'Playfair Display',serif;">"</span>
+      </div>
+      <div class="amc-label">Int Page- Temp 2</div>
+      <div class="amc-sub">Full-bleed pull quote</div>
+    </button>
+    <button class="add-menu-card" data-add-type="profile">
+      <div class="amc-icon" style="background:#fff;border:1px solid #e0d9cc;">
+        <div style="display:flex;height:38px;">
+          <div style="flex:1;background:#0B1426;border-radius:1px 0 0 1px;"></div>
+          <div style="flex:1;background:#f9f7f3;border-radius:0 1px 1px 0;"></div>
+        </div>
+      </div>
+      <div class="amc-label">Int Page- Temp 3</div>
+      <div class="amc-sub">Stats &amp; services snapshot</div>
+    </button>
+    <button class="add-menu-card" data-add-type="interview">
+      <div class="amc-icon" style="background:#fff;border:1px solid #e0d9cc;">
+        <div style="display:flex;height:38px;gap:4px;align-items:center;padding:4px;">
+          <div style="width:36%;background:#e0d9cc;height:30px;border-radius:1px;"></div>
+          <div style="flex:1;display:flex;flex-direction:column;gap:3px;">
+            <div style="height:4px;background:#C9A84C;border-radius:1px;width:60%;"></div>
+            <div style="height:3px;background:#e0d9cc;border-radius:1px;"></div>
+            <div style="height:3px;background:#e0d9cc;border-radius:1px;"></div>
+            <div style="height:4px;background:#C9A84C;border-radius:1px;width:60%;margin-top:2px;"></div>
+            <div style="height:3px;background:#e0d9cc;border-radius:1px;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="amc-label">Int Page- Temp 4</div>
+      <div class="amc-sub">Q&amp;A with portrait photo</div>
+    </button>
+    <button class="add-menu-card" data-add-type="stats">
+      <div class="amc-icon" style="background:#0B1426;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px;padding:4px;">
+          <div style="background:rgba(201,168,76,0.15);border-top:2px solid #C9A84C;padding:3px;"><span style="color:#C9A84C;font-size:10px;font-weight:700;">98%</span></div>
+          <div style="background:rgba(201,168,76,0.15);border-top:2px solid #C9A84C;padding:3px;"><span style="color:#C9A84C;font-size:10px;font-weight:700;">£2M</span></div>
+          <div style="background:rgba(201,168,76,0.15);border-top:2px solid #C9A84C;padding:3px;"><span style="color:#C9A84C;font-size:10px;font-weight:700;">50+</span></div>
+          <div style="background:rgba(201,168,76,0.15);border-top:2px solid #C9A84C;padding:3px;"><span style="color:#C9A84C;font-size:10px;font-weight:700;">10y</span></div>
+        </div>
+      </div>
+      <div class="amc-label">Int Page- Temp 5</div>
+      <div class="amc-sub">Key metrics &amp; data grid</div>
+    </button>
+    <button class="add-menu-card" data-add-type="gallery">
+      <div class="amc-icon" style="background:linear-gradient(135deg,#1a1a2e,#2d1b4e);">
+        <div style="display:flex;align-items:flex-end;height:100%;padding:6px;">
+          <div style="border-left:3px solid #C9A84C;padding-left:5px;">
+            <div style="height:3px;background:#fff;width:60%;margin-bottom:3px;opacity:0.8;"></div>
+            <div style="height:2px;background:rgba(255,255,255,0.4);width:80%;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="amc-label">Int Page- Temp 6</div>
+      <div class="amc-sub">Full-bleed image with caption</div>
+    </button>
+    <button class="add-menu-card" data-add-type="showcase">
+      <div class="amc-icon" style="background:#fff;border:1px solid #e0d9cc;">
+        <div style="height:16px;background:#d0ccc6;margin-bottom:4px;border-radius:1px;"></div>
+        <div style="display:flex;gap:4px;">
+          <div style="flex:1;display:flex;flex-direction:column;gap:2px;padding-top:2px;">
+            <div style="height:4px;background:#111;border-radius:1px;width:70%;"></div>
+            <div style="height:2px;background:#e0d9cc;border-radius:1px;"></div>
+            <div style="height:2px;background:#e0d9cc;border-radius:1px;"></div>
+          </div>
+          <div style="flex:0 0 42%;background:rgba(228,2,45,0.12);border:1px solid rgba(228,2,45,0.3);border-radius:1px;padding:3px;">
+            <div style="height:2px;background:rgba(228,2,45,0.4);border-radius:1px;margin-bottom:2px;"></div>
+            <div style="height:2px;background:rgba(228,2,45,0.2);border-radius:1px;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="amc-label">Int Page- Temp 7</div>
+      <div class="amc-sub">Image top + text &amp; quote</div>
+    </button>
+    <button class="add-menu-card" data-add-type="editorial">
+      <div class="amc-icon" style="background:#fff;border:1px solid #e0d9cc;padding:0;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="height:16px;background:linear-gradient(to bottom,#c8c4bb,#e0ddd6);flex-shrink:0;"></div>
+        <div style="flex:1;display:flex;gap:3px;padding:4px 4px 0 4px;align-items:flex-start;">
+          <div style="flex:1;display:flex;flex-direction:column;gap:2px;">
+            <div style="height:5px;background:#111;border-radius:1px;width:85%;"></div>
+            <div style="height:5px;background:#111;border-radius:1px;width:65%;"></div>
+            <div style="height:2px;background:#d0ccc6;border-radius:1px;margin-top:2px;"></div>
+            <div style="height:2px;background:#d0ccc6;border-radius:1px;"></div>
+            <div style="height:2px;background:#d0ccc6;border-radius:1px;"></div>
+          </div>
+          <div style="width:1px;background:#e0ddd6;align-self:stretch;margin:0 1px;flex-shrink:0;"></div>
+          <div style="flex:1;display:flex;flex-direction:column;gap:2px;">
+            <div style="height:3px;background:#111;border-radius:1px;width:90%;margin-bottom:1px;"></div>
+            <div style="height:2px;background:#d0ccc6;border-radius:1px;"></div>
+            <div style="height:2px;background:#d0ccc6;border-radius:1px;"></div>
+            <div style="height:2px;background:#d0ccc6;border-radius:1px;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="amc-label">Int Page- Temp 9</div>
+      <div class="amc-sub">Banner + two-column editorial</div>
+    </button>
+    <button class="add-menu-card" data-add-type="team">
+      <div class="amc-icon" style="background:#fff;border:1px solid #e0d9cc;padding:0;overflow:hidden;display:flex;flex-direction:column;gap:2px;">
+        <div style="display:flex;gap:2px;flex:1;">
+          <div style="flex:1;background:#2a2a2a;border-radius:1px;"></div>
+          <div style="flex:1;background:#333;border-radius:1px;"></div>
+          <div style="flex:1;background:#2a2a2a;border-radius:1px;"></div>
+        </div>
+        <div style="display:flex;gap:2px;flex:1;">
+          <div style="flex:1;background:#333;border-radius:1px;"></div>
+          <div style="flex:1;background:#2a2a2a;border-radius:1px;"></div>
+          <div style="flex:1;background:#333;border-radius:1px;"></div>
+        </div>
+        <div style="padding:3px 3px 2px;">
+          <div style="height:3px;background:#111;border-radius:1px;width:90%;margin-bottom:2px;"></div>
+          <div style="height:2px;background:#e0d9cc;border-radius:1px;"></div>
+        </div>
+      </div>
+      <div class="amc-label">Int Page- Temp 11</div>
+      <div class="amc-sub">Team grid + heading &amp; text</div>
+    </button>
+    <button class="add-menu-card" data-add-type="duo">
+      <div class="amc-icon" style="background:#fff;border:1px solid #e0d9cc;padding:0;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="display:flex;gap:2px;height:22px;flex-shrink:0;">
+          <div style="flex:1;background:#c8c4bb;"></div>
+          <div style="flex:1;background:#d8d4cc;"></div>
+        </div>
+        <div style="flex:1;display:flex;gap:2px;padding:4px 3px 0 3px;">
+          <div style="flex:1;display:flex;flex-direction:column;gap:2px;">
+            <div style="height:4px;background:#111;border-radius:1px;width:85%;"></div>
+            <div style="height:4px;background:#111;border-radius:1px;width:65%;"></div>
+            <div style="height:2px;background:#e0d9cc;border-radius:1px;margin-top:2px;"></div>
+            <div style="height:2px;background:#e0d9cc;border-radius:1px;"></div>
+            <div style="height:2px;background:#e0d9cc;border-radius:1px;"></div>
+          </div>
+          <div style="flex:0 0 46%;background:#c8c4bb;border-radius:1px;"></div>
+        </div>
+      </div>
+      <div class="amc-label">Int Page- Temp 10</div>
+      <div class="amc-sub">Duo images + text &amp; side photo</div>
+    </button>
+    <button class="add-menu-card" data-add-type="widetext">
+      <div class="amc-icon" style="background:#fff;border:1px solid #e0d9cc;padding:0;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="flex:0 0 40%;background:linear-gradient(to bottom,#c8c4bb,#9a9590);position:relative;">
+          <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.05),rgba(0,0,0,0.2));"></div>
+        </div>
+        <div style="flex:1;padding:4px 6px;display:flex;flex-direction:column;gap:3px;">
+          <div style="height:4px;background:#0B0F14;width:90%;border-radius:1px;"></div>
+          <div style="height:4px;background:#0B0F14;width:70%;border-radius:1px;margin-bottom:2px;"></div>
+          <div style="height:2px;background:#d0ccc6;border-radius:1px;"></div>
+          <div style="height:2px;background:#d0ccc6;border-radius:1px;width:85%;"></div>
+          <div style="height:2px;background:#d0ccc6;border-radius:1px;width:75%;"></div>
+          <div style="height:2px;background:#d0ccc6;border-radius:1px;width:80%;"></div>
+          <div style="height:2px;background:#E4022D;width:3px;margin-top:3px;"></div>
+        </div>
+      </div>
+      <div class="amc-label">Int Page- Temp 15</div>
+      <div class="amc-sub">Hero banner + full-width text</div>
+    </button>
+    <button class="add-menu-card" data-add-type="impact">
+      <div class="amc-icon" style="background:#fff;border:1px solid #e0d9cc;padding:0;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="padding:4px 5px 2px;flex-shrink:0;">
+          <div style="font-size:5px;font-weight:800;color:#E4022D;text-transform:uppercase;line-height:1.2;">#IMPACT <span style="color:#0B0F14;">— REAL IMPACT</span></div>
+        </div>
+        <div style="display:flex;flex:0 0 18px;gap:2px;padding:0 5px;">
+          <div style="flex:0 0 52%;background:#c8c4bb;border-radius:1px;"></div>
+          <div style="flex:1;display:flex;flex-direction:column;gap:2px;padding:2px 0;">
+            <div style="height:2px;background:#d0ccc6;border-radius:1px;"></div>
+            <div style="height:2px;background:#e0ddd6;border-radius:1px;width:80%;"></div>
+          </div>
+        </div>
+        <div style="display:flex;flex:1;gap:2px;padding:0 5px 3px;">
+          <div style="flex:0 0 52%;display:flex;flex-direction:column;gap:2px;padding:2px 0;">
+            <div style="height:2px;background:#d0ccc6;border-radius:1px;"></div>
+            <div style="height:2px;background:#d0ccc6;border-radius:1px;width:85%;"></div>
+            <div style="height:2px;background:#d0ccc6;border-radius:1px;width:70%;"></div>
+            <div style="flex:0 0 6px;background:#E4022D;border-radius:1px;margin-top:2px;"></div>
+          </div>
+          <div style="flex:1;background:#c8c4bb;border-radius:1px;"></div>
+        </div>
+      </div>
+      <div class="amc-label">Int Page- Temp 14</div>
+      <div class="amc-sub">Heading + image grid + quote</div>
+    </button>
+    <button class="add-menu-card" data-add-type="feature">
+      <div class="amc-icon" style="background:#fff;border:1px solid #e0d9cc;padding:0;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="height:22px;background:#0B0F14;flex-shrink:0;display:flex;align-items:center;padding:0 6px;gap:5px;position:relative;">
+          <div style="position:absolute;top:0;left:0;display:flex;flex-direction:column;gap:2px;padding:3px 0 0 3px;">
+            <div style="width:7px;height:7px;background:#E4022D;"></div>
+            <div style="width:5px;height:5px;background:#E4022D;margin-left:2px;"></div>
+          </div>
+          <div style="margin-left:12px;">
+            <div style="font-size:5px;color:#fff;font-style:italic;font-family:serif;line-height:1;">Agency</div>
+            <div style="font-size:5px;color:#fff;font-weight:800;font-family:sans-serif;line-height:1;">winning</div>
+          </div>
+          <div style="margin-left:auto;font-size:4px;color:rgba(255,255,255,0.5);font-weight:700;">AGENCY</div>
+        </div>
+        <div style="flex:1;padding:4px 5px;display:flex;flex-direction:column;gap:3px;">
+          <div style="height:4px;background:#0B0F14;width:85%;border-radius:1px;"></div>
+          <div style="height:4px;background:#0B0F14;width:70%;border-radius:1px;"></div>
+          <div style="width:12px;height:1.5px;background:#E4022D;margin-bottom:1px;"></div>
+          <div style="height:2px;background:#d0ccc6;border-radius:1px;"></div>
+          <div style="flex:0 0 10px;background:#c8c4bb;border-radius:1px;margin-bottom:2px;"></div>
+          <div style="height:2px;background:#d0ccc6;border-radius:1px;"></div>
+          <div style="height:2px;background:#e0ddd6;border-radius:1px;width:80%;"></div>
+          <div style="height:1.5px;background:#E4022D;width:3px;margin-top:2px;"></div>
+        </div>
+      </div>
+      <div class="amc-label">Int Page- Temp 13</div>
+      <div class="amc-sub">Branded header + article layout</div>
+    </button>
+    <button class="add-menu-card" data-add-type="spotlight">
+      <div class="amc-icon" style="background:linear-gradient(130deg,#1a1a2e 0%,#0B0F14 100%);position:relative;overflow:hidden;">
+        <div style="position:absolute;inset:0;background:linear-gradient(130deg,transparent 30%,rgba(11,15,20,0.95) 100%);"></div>
+        <div style="position:absolute;bottom:6px;right:0;width:60%;border-left:2px solid #E4022D;padding:5px 6px;">
+          <div style="height:2px;background:#E4022D;width:14px;margin-bottom:4px;border-radius:1px;"></div>
+          <div style="height:5px;background:#fff;border-radius:1px;width:80%;margin-bottom:3px;opacity:0.9;"></div>
+          <div style="height:2px;background:#E4022D;border-radius:1px;width:55%;margin-bottom:4px;"></div>
+          <div style="height:1px;background:rgba(255,255,255,0.15);margin-bottom:4px;"></div>
+          <div style="height:2px;background:rgba(255,255,255,0.35);border-radius:1px;width:90%;margin-bottom:2px;"></div>
+          <div style="height:2px;background:rgba(255,255,255,0.2);border-radius:1px;width:70%;"></div>
+        </div>
+      </div>
+      <div class="amc-label">Int Page- Temp 8</div>
+      <div class="amc-sub">Full-bleed with person spotlight</div>
+    </button>
+    <button class="add-menu-card" data-add-type="showcase2">
+      <div class="amc-icon" style="background:#fff;border:1px solid #e0d9cc;">
+        <div style="height:10px;background:#d0ccc6;margin-bottom:4px;border-radius:1px;"></div>
+        <div style="display:flex;gap:4px;">
+          <div style="flex:1;display:flex;flex-direction:column;gap:2px;padding-top:2px;">
+            <div style="height:4px;background:#111;border-radius:1px;width:70%;"></div>
+            <div style="height:2px;background:#e0d9cc;border-radius:1px;"></div>
+            <div style="height:2px;background:#e0d9cc;border-radius:1px;"></div>
+            <div style="height:2px;background:#e0d9cc;border-radius:1px;"></div>
+          </div>
+          <div style="flex:0 0 42%;background:rgba(228,2,45,0.12);border:1px solid rgba(228,2,45,0.3);border-radius:1px;padding:3px;">
+            <div style="height:2px;background:rgba(228,2,45,0.4);border-radius:1px;margin-bottom:2px;"></div>
+            <div style="height:2px;background:rgba(228,2,45,0.2);border-radius:1px;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="amc-label">Int Page- Temp 16</div>
+      <div class="amc-sub">Small image + text &amp; quote</div>
+    </button>
+    <button class="add-menu-card" data-add-type="twocol">
+      <div class="amc-icon" style="background:#fff;border:1px solid #e0d9cc;padding:0;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="height:18px;background:linear-gradient(to bottom,#c8c4bb,#d8d4cc);flex-shrink:0;"></div>
+        <div style="flex-shrink:0;padding:3px 4px 2px;border-bottom:1px solid #111;">
+          <div style="height:3px;background:#111;border-radius:1px;width:90%;"></div>
+        </div>
+        <div style="flex:1;display:flex;gap:2px;padding:3px 3px 0 3px;">
+          <div style="flex:1;display:flex;flex-direction:column;gap:2px;">
+            <div style="height:4px;background:#555;border-radius:1px;width:80%;"></div>
+            <div style="height:2px;background:#e0d9cc;border-radius:1px;"></div>
+            <div style="height:2px;background:#e0d9cc;border-radius:1px;"></div>
+            <div style="height:2px;background:#e0d9cc;border-radius:1px;width:85%;"></div>
+          </div>
+          <div style="width:1px;background:#e0ddd6;margin:0 1px;"></div>
+          <div style="flex:1;display:flex;flex-direction:column;gap:2px;">
+            <div style="height:4px;background:#555;border-radius:1px;width:80%;"></div>
+            <div style="height:2px;background:#e0d9cc;border-radius:1px;"></div>
+            <div style="height:2px;background:#e0d9cc;border-radius:1px;"></div>
+            <div style="height:2px;background:#e0d9cc;border-radius:1px;width:75%;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="amc-label">Int Page- Temp 17</div>
+      <div class="amc-sub">Banner + two-column text</div>
+    </button>
+    <button class="add-menu-card" data-add-type="impact2">
+      <div class="amc-icon" style="background:#fff;border:1px solid #e0d9cc;display:flex;flex-direction:column;padding:0;">
+        <div style="padding:6px 6px 4px;border-bottom:1px solid #e0d9cc;">
+          <div style="height:4px;background:#c0bdb8;border-radius:1px;width:90%;margin-bottom:2px;"></div>
+          <div style="height:4px;background:#c0bdb8;border-radius:1px;width:70%;"></div>
+        </div>
+        <div style="display:flex;gap:3px;padding:4px;flex:1;">
+          <div style="flex:0 0 38%;background:#d0ccc6;border-radius:1px;"></div>
+          <div style="flex:1;display:flex;flex-direction:column;gap:2px;padding-top:1px;">
+            <div style="height:2px;background:#111;border-radius:1px;width:90%;"></div>
+            <div style="height:2px;background:#111;border-radius:1px;width:80%;"></div>
+            <div style="height:2px;background:#111;border-radius:1px;width:85%;"></div>
+          </div>
+        </div>
+        <div style="padding:4px 6px;border-top:1px solid #e0d9cc;">
+          <div style="height:2px;background:#e0d9cc;border-radius:1px;margin-bottom:2px;"></div>
+          <div style="height:2px;background:#e0d9cc;border-radius:1px;width:80%;margin-bottom:2px;"></div>
+          <div style="height:2px;background:rgba(228,2,45,0.3);border-radius:1px;"></div>
+        </div>
+      </div>
+      <div class="amc-label">Int Page- Temp 18</div>
+      <div class="amc-sub">Impact layout, no portrait image</div>
+    </button>
+    <button class="add-menu-card" data-add-type="stats2">
+      <div class="amc-icon" style="background:#fff;border:1px solid #e0d9cc;display:flex;flex-direction:column;padding:0;overflow:hidden;">
+        <div style="display:flex;gap:2px;padding:3px;flex:0 0 38%;">
+          <div style="flex:1;background:#d0ccc6;border-radius:1px;"></div>
+          <div style="flex:1;background:#d0ccc6;border-radius:1px;"></div>
+        </div>
+        <div style="display:flex;gap:3px;flex:1;padding:3px;border-top:1px solid #111;">
+          <div style="flex:1;display:flex;flex-direction:column;gap:2px;">
+            <div style="height:3px;background:#111;border-radius:1px;width:80%;"></div>
+            <div style="height:2px;background:#E4022D;border-radius:1px;width:60%;"></div>
+            <div style="height:2px;background:#ccc;border-radius:1px;"></div>
+            <div style="height:2px;background:#E4022D;border-radius:1px;width:60%;"></div>
+            <div style="height:2px;background:#ccc;border-radius:1px;"></div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;gap:2px;padding-top:2px;">
+            <div style="height:2px;background:#E4022D;border-radius:1px;width:60%;"></div>
+            <div style="height:2px;background:#ccc;border-radius:1px;"></div>
+            <div style="height:2px;background:#E4022D;border-radius:1px;width:60%;"></div>
+            <div style="height:2px;background:#ccc;border-radius:1px;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="amc-label">Int Page- Temp 19</div>
+      <div class="amc-sub">Images + red sub-headings layout</div>
+    </button>
+    <button class="add-menu-card" data-add-type="statsBanner">
+      <div class="amc-icon" style="background:#fff;border:1px solid #e0d9cc;display:flex;flex-direction:column;padding:0;overflow:hidden;">
+        <div style="flex:0 0 38%;background:#d0ccc6;margin:3px 3px 2px;border-radius:1px;"></div>
+        <div style="display:flex;gap:3px;flex:1;padding:3px;border-top:1px solid #111;">
+          <div style="flex:1;display:flex;flex-direction:column;gap:2px;">
+            <div style="height:3px;background:#111;border-radius:1px;width:80%;"></div>
+            <div style="height:2px;background:#E4022D;border-radius:1px;width:60%;"></div>
+            <div style="height:2px;background:#ccc;border-radius:1px;"></div>
+            <div style="height:2px;background:#E4022D;border-radius:1px;width:60%;"></div>
+            <div style="height:2px;background:#ccc;border-radius:1px;"></div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;gap:2px;padding-top:2px;">
+            <div style="height:2px;background:#E4022D;border-radius:1px;width:60%;"></div>
+            <div style="height:2px;background:#ccc;border-radius:1px;"></div>
+            <div style="height:2px;background:#E4022D;border-radius:1px;width:60%;"></div>
+            <div style="height:2px;background:#ccc;border-radius:1px;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="amc-label">Int Page- Temp 21</div>
+      <div class="amc-sub">Single banner + red sub-headings layout</div>
+    </button>
+    <button class="add-menu-card" data-add-type="sidebar">
+      <div class="amc-icon" style="background:#fff;border:1px solid #e0d9cc;display:flex;flex-direction:row;padding:0;overflow:hidden;">
+        <div style="flex:0 0 42%;display:flex;flex-direction:column;border-right:1px solid #e0d9cc;">
+          <div style="flex:1;background:#d0ccc6;"></div>
+          <div style="flex:0 0 38%;background:#E4022D;padding:3px 4px;">
+            <div style="height:2px;background:rgba(255,255,255,0.7);border-radius:1px;margin-bottom:2px;"></div>
+            <div style="height:2px;background:rgba(255,255,255,0.7);border-radius:1px;width:80%;"></div>
+          </div>
+        </div>
+        <div style="flex:1;padding:4px;display:flex;flex-direction:column;gap:2px;">
+          <div style="height:4px;background:#111;border-radius:1px;width:95%;"></div>
+          <div style="height:4px;background:#111;border-radius:1px;width:75%;margin-bottom:3px;"></div>
+          <div style="height:2px;background:#ccc;border-radius:1px;"></div>
+          <div style="height:2px;background:#ccc;border-radius:1px;width:85%;"></div>
+          <div style="height:2px;background:#ccc;border-radius:1px;width:90%;"></div>
+          <div style="height:2px;background:#ccc;border-radius:1px;width:80%;"></div>
+        </div>
+      </div>
+      <div class="amc-label">Int Page- Temp 20</div>
+      <div class="amc-sub">Image + quote left, heading + paras right</div>
+    </button>
+    <button class="add-menu-card" data-add-type="stats3">
+      <div class="amc-icon" style="background:#fff;border:1px solid #e0d9cc;display:flex;flex-direction:column;padding:0;overflow:hidden;">
+        <div style="flex:0 0 42%;background:#d0ccc6;"></div>
+        <div style="flex:1;display:flex;gap:2px;padding:3px;">
+          <div style="flex:1;display:flex;flex-direction:column;gap:2px;">
+            <div style="height:4px;background:#E4022D;border-radius:1px;width:60%;"></div>
+            <div style="height:2px;background:#ccc;border-radius:1px;"></div>
+            <div style="height:2px;background:#ccc;border-radius:1px;"></div>
+            <div style="height:4px;background:#E4022D;border-radius:1px;width:60%;margin-top:2px;"></div>
+            <div style="height:2px;background:#ccc;border-radius:1px;"></div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;gap:2px;">
+            <div style="height:4px;background:#E4022D;border-radius:1px;width:60%;"></div>
+            <div style="height:2px;background:#ccc;border-radius:1px;"></div>
+            <div style="height:2px;background:#ccc;border-radius:1px;"></div>
+            <div style="height:4px;background:#E4022D;border-radius:1px;width:60%;margin-top:2px;"></div>
+            <div style="height:2px;background:#ccc;border-radius:1px;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="amc-label">Int Page- Temp 21</div>
+      <div class="amc-sub">Single image top, red sub-headings layout</div>
+    </button>
+    <button class="add-menu-card" data-add-type="vision2">
+      <div class="amc-icon" style="background:#0B1426;display:flex;flex-direction:column;padding:0;overflow:hidden;">
+        <div style="flex:0 0 38%;display:flex;gap:2px;">
+          <div style="flex:1;background:#2a3a5c;"></div>
+          <div style="flex:1;background:#1a2a4c;"></div>
+        </div>
+        <div style="flex:1;display:flex;gap:0;">
+          <div style="flex:0 0 40%;background:#1a1a2e;"></div>
+          <div style="flex:1;padding:4px;display:flex;flex-direction:column;gap:2px;">
+            <div style="height:3px;background:rgba(255,255,255,0.5);border-radius:1px;width:80%;"></div>
+            <div style="height:5px;background:#fff;border-radius:1px;width:90%;"></div>
+            <div style="height:2px;background:rgba(255,255,255,0.3);border-radius:1px;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="amc-label">Int Page- Temp 22</div>
+      <div class="amc-sub">Two images top + portrait + article</div>
+    </button>
+    <button class="add-menu-card" data-add-type="coverCollage">
+      <div class="amc-icon" style="background:#0B1426;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);gap:2px;padding:0;overflow:hidden;">
+        <div style="grid-column:span 2;background:#2a3a5c;"></div>
+        <div style="background:#1a2a4c;"></div>
+        <div style="background:#1a2a4c;"></div>
+        <div style="grid-column:span 2;background:#2a3a5c;"></div>
+        <div style="background:#1a2a4c;"></div>
+        <div style="background:#1a2a4c;"></div>
+        <div style="background:#2a3a5c;"></div>
+      </div>
+      <div class="amc-label">Cover Page Collage</div>
+      <div class="amc-sub">10-image collage with text overlay</div>
+    </button>
+  </div>
+</div>
+
+<!-- ─── EDIT PANEL ─── -->
+<div class="edit-panel no-print hidden" id="editPanel">
+  <div class="edit-panel-header">
+    <span id="editPanelTitle">Edit Page</span>
+    <button class="btn-close-panel" id="closePanelBtn">&#x2715;</button>
+  </div>
+  <div class="edit-panel-body" id="editPanelBody"></div>
+  <div class="edit-panel-footer">
+    <button class="btn-save-panel" id="savePanelBtn">&#10003; Save Changes</button>
+    <button class="btn-cancel-panel" id="cancelPanelBtn">Cancel</button>
+  </div>
+</div>
+
+<!-- ─── IMAGE MODAL ─── -->
+<div class="modal-overlay hidden" id="imageModal">
+  <div class="modal">
+    <div class="modal-header">
+      <span>Upload Image</span>
+      <button class="btn-close-modal" id="closeImageModal">&#x2715;</button>
+    </div>
+    <div class="modal-body">
+      <div class="upload-zone" id="uploadZone">
+        <div class="upload-icon">&#128247;</div>
+        <p>Click or drag an image here</p>
+        <small>JPG, PNG, WEBP – max 100MB</small>
+        <input type="file" id="imageFileInput" accept="image/*" style="display:none">
+      </div>
+      <div class="upload-preview hidden" id="uploadPreview">
+        <img id="uploadPreviewImg" src="" alt="">
+        <p id="uploadPreviewName"></p>
+      </div>
+      <div class="or-divider">— or paste a URL —</div>
+      <input type="url" class="url-input" id="imageUrlInput" placeholder="https://example.com/photo.jpg">
+    </div>
+    <div class="modal-footer">
+      <button class="btn-apply-image" id="applyImageBtn">Apply Image</button>
+      <button class="btn-remove-image" id="removeImageBtn">Remove Image</button>
+    </div>
+  </div>
+</div>
+
+<!-- ─── TOAST ─── -->
+<div class="toast hidden" id="toast"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="/editor.js"></script>
+</body>
+</html>
