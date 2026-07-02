@@ -4930,14 +4930,14 @@
   {
     "type": "widetext",
     "accentColor": "#E4022D",
-    "heroImage": "/images/1781159134642.jpg",
+    "heroImage": "/images/1782977560880.png",
     "heroImageX": 0,
     "heroImageY": 54,
     "heroImageZoom": 101,
     "articleHeadline": "Bosphorus: Where Nature, History, and Culture Become a Way of Life",
     "visionParas": [
       "If the essence of the Bosphorus were to be defined in three words, they would be <strong data-start=\"156\" data-end=\"188\">nature, history, and culture</strong>. Because the Bosphorus is not merely a geographic location; it is a unique whole where these three elements come together and transform into a way of life.",
-      "One of the biggest misconceptions about living in the Bosphorus is that it is seen only as an investment area evaluated through property and title deeds. However, living in the Bosphorus means forming an invisible emotional bond with its waterfront mansions and shores, carrying a culture passed down from the past, and becoming part of a responsibility toward future generations.",
+      "<br>",
       "Over the years, the most visible distinction has emerged between those who understand the spirit of the Bosphorus and those who simply buy its view. The former see themselves as custodians of this unique fabric, while the latter often realize that what they own is only a physical asset. This difference has become even more visible in recent years with the rapid transfer of wealth and properties.",
       "The mindset of “I paid for it, I own it, I can do whatever I want” sometimes leads to the destruction of natural and cultural values, and inevitably comes into contact with the Bosphorus’s strict preservation rules and regulatory system. At this point, property owners may face strict bureaucratic processes and a strong protection framework. Because the Bosphorus is not an ordinary investment zone; what is purchased here is not just a structure, but a part of a centuries-old living culture.",
       "For this reason, those considering owning property in the Bosphorus must understand not only the view and square meters, but also the responsibility that comes with it. The Bosphorus stays with those who truly embrace it for a lifetime, while reminding those who see it only as an investment of its own rules.",
@@ -4959,7 +4959,8 @@
     "edDate": "July 2026",
     "edLabel": "Ulvi ÖZCAN",
     "wtParaGap": 8,
-    "wtBannerHeight": 191
+    "wtBannerHeight": 191,
+    "wtHeroOverlay": true
   },
   {
     "type": "widetext",

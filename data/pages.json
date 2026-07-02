@@ -4959,7 +4959,8 @@
     "edDate": "July 2026",
     "edLabel": "Ulvi ÖZCAN",
     "wtParaGap": 8,
-    "wtBannerHeight": 191
+    "wtBannerHeight": 212,
+    "wtHeroOverlay": true
   },
   {
     "type": "widetext",
