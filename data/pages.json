@@ -886,7 +886,7 @@
     "pageLabel": "PAGE 02",
     "edLabel": "Ulvi Özcan",
     "edDate": "Temmuz 2026",
-    "vsShowQuote": true,
+    "vsShowQuote": false,
     "heroImageX": 50,
     "heroImageY": 100,
     "heroImageZoom": 100,
