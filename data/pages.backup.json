@@ -1847,11 +1847,11 @@
     "articleImageX": 45,
     "articleImageY": 12,
     "pageLabel": "PAGE 05",
-    "ivTitleSize": 27,
-    "ivTitleLh": 15,
+    "ivTitleSize": 24,
+    "ivTitleLh": 13,
     "ivSubheadingLh": 15,
     "ivBannerLabel": "WITH",
-    "ivParaGap": 5
+    "ivParaGap": 0
   },
   {
     "id": "p177875031955991657",
