@@ -1905,11 +1905,11 @@
     "articleImageX": 39,
     "articleImageY": 42,
     "pageLabel": "SAYFA 05",
-    "ivTitleSize": 24,
+    "ivTitleSize": 25,
     "ivTitleLh": 13,
     "ivSubheadingLh": 19,
     "ivBannerLabel": "<strong data-start=\"0\" data-end=\"18\" data-is-only-node=\"\">ile</strong>",
-    "ivParaGap": 10
+    "ivParaGap": 15
   },
   {
     "id": "p177875031955991657",
