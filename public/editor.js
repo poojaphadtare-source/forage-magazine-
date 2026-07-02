@@ -750,7 +750,7 @@ function buildVisionPage(page, index) {
   // ── TOP: hero banner image ──
   const hero = mkEl('div', 'vs-hero');
   hero.appendChild(buildImgLayer(page, 'heroImage', 'heroImageX', 'heroImageY', 'heroImageZoom'));
-  hero.appendChild(mkEl('div', 'vs-hero-overlay'));
+  if (page.vsHeroOverlay !== false) hero.appendChild(mkEl('div', 'vs-hero-overlay'));
   hero.appendChild(buildImgOverlay(page.id, 'heroImage', 'Hero Banner Image'));
   div.appendChild(hero);
 
@@ -801,8 +801,6 @@ function buildVisionPage(page, index) {
     qBox.appendChild(mkEl('div', 'vs-qmark', '”'));
     qBox.appendChild(inlineEditable('p', 'vs-quote-text',
       page.pullQuote || 'An inspiring quote that captures the vision.', page, 'pullQuote'));
-    qBox.appendChild(inlineEditable('span', 'vs-quote-author',
-      page.pullQuoteAuthor || 'Name, Title', page, 'pullQuoteAuthor'));
     rightCol.appendChild(qBox);
   }
 
@@ -893,8 +891,6 @@ function buildVision2Page(page, index) {
     qBox.appendChild(mkEl('div', 'vs-qmark', '"'));
     qBox.appendChild(inlineEditable('p', 'vs-quote-text',
       page.pullQuote || 'An inspiring quote that captures the vision.', page, 'pullQuote'));
-    qBox.appendChild(inlineEditable('span', 'vs-quote-author',
-      page.pullQuoteAuthor || 'Name, Title', page, 'pullQuoteAuthor'));
     rightCol.appendChild(qBox);
   }
 
@@ -2256,6 +2252,9 @@ function savePanel() {
   if (body.querySelector('[data-field^="st2RightSub_"]'))      page.st2RightSections = [];
   if (body.querySelector('[data-field^="ivLeftThought"]'))     page.ivLeftThoughts   = [];
   if (body.querySelector('[data-field^="artBodyPara"]'))       page.articleBody      = [];
+  if (body.querySelector('[data-field^="visionPara"]'))        page.visionParas      = [];
+  if (body.querySelector('[data-field^="sbPara"]'))            page.sbParas          = [];
+  if (body.querySelector('[data-field^="widetextPara"]'))     page.visionParas      = [];
 
   // Collect scalar fields (input, textarea with data-field)
   body.querySelectorAll('[data-field]').forEach(inp => {
@@ -2431,6 +2430,33 @@ function savePanel() {
   renderAll();
   closePanel();
   showToast('Changes saved');
+}
+
+function savePanelSilent() {
+  const page = state.pages.find(p => p.id === editingPageId);
+  if (!page) return;
+  const body = document.getElementById('editPanelBody');
+  if (body.querySelector('[data-field^="sbPara"]')) page.sbParas = [];
+  if (body.querySelector('[data-field^="visionPara"]')) page.visionParas = [];
+  body.querySelectorAll('[data-field]').forEach(inp => {
+    const field = inp.dataset.field;
+    if (!field) return;
+    if (field.startsWith('sbPara')) {
+      const i = parseInt(field.replace('sbPara', ''), 10);
+      if (!page.sbParas) page.sbParas = [];
+      page.sbParas[i] = inp.value;
+    } else if (field.startsWith('widetextPara')) {
+      const i = parseInt(field.replace('widetextPara', ''), 10);
+      if (!page.visionParas) page.visionParas = [];
+      page.visionParas[i] = inp.value;
+    } else if (field.startsWith('visionPara')) {
+      const i = parseInt(field.replace('visionPara', ''), 10);
+      if (!page.visionParas) page.visionParas = [];
+      page.visionParas[i] = inp.value;
+    }
+  });
+  savePages(true);
+  renderAll();
 }
 
 // ── EDIT PANEL FIELD BUILDERS ──────────────────────────────
@@ -2811,7 +2837,7 @@ function buildVisionFields(body, page) {
     const removeBtn = mkEl('button', 'btn-remove-para', '✕');
     removeBtn.type = 'button';
     removeBtn.title = 'Remove paragraph';
-    removeBtn.onclick = () => { wrap.remove(); renumberParaLabels(); };
+    removeBtn.onclick = () => { wrap.classList.add('para-crossed-out'); setTimeout(() => { wrap.remove(); renumberParaLabels(); savePanelSilent(); }, 400); };
     labelRow.appendChild(removeBtn);
     wrap.appendChild(labelRow);
     const ta = document.createElement('textarea');
@@ -2852,9 +2878,17 @@ function buildVisionFields(body, page) {
   vsQToggleWrap.appendChild(vsQToggleLabel);
   body.appendChild(vsQToggleWrap);
   const pqTa = addField(body, 'Pull Quote', 'pullQuote', page.pullQuote, 'textarea'); pqTa.rows = 3;
-  addField(body, 'Quote Author', 'pullQuoteAuthor', page.pullQuoteAuthor);
   addSectionTitle(body, 'HERO BANNER IMAGE');
   addImageFieldBtn(body, page.id, 'heroImage', 'Hero Banner Image');
+  const vsOvWrap = mkEl('div', 'field-group');
+  const vsOvLabel = mkEl('label', 'toggle-label');
+  const vsOvChk = document.createElement('input');
+  vsOvChk.type = 'checkbox'; vsOvChk.dataset.field = 'vsHeroOverlay';
+  vsOvChk.checked = page.vsHeroOverlay !== false;
+  vsOvLabel.appendChild(vsOvChk);
+  vsOvLabel.appendChild(document.createTextNode(' Show Black Overlay'));
+  vsOvWrap.appendChild(vsOvLabel);
+  body.appendChild(vsOvWrap);
   const vsHXS = addSliderField(body, 'Position: Left / Right', 'heroImageX', page.heroImageX != null ? page.heroImageX : 50);
   const vsHYS = addSliderField(body, 'Position: Up / Down',   'heroImageY', page.heroImageY != null ? page.heroImageY : 50);
   const vsHZS = addSliderField(body, 'Zoom', 'heroImageZoom', page.heroImageZoom != null ? page.heroImageZoom : 100, 80, 200);
@@ -3843,7 +3877,7 @@ function buildSidebarPage(page, index) {
 
   // Image (top portion of left column)
   const imgWrap = mkEl('div', 'sb-img-wrap');
-  imgWrap.appendChild(buildImgLayer(page, 'articleImage', 'articleImageX', 'articleImageY', 'articleImageZoom'));
+  imgWrap.appendChild(buildImgLayer(page, 'articleImage', 'articleImageX', 'articleImageY', 'articleImageZoom', 'bgsize'));
   imgWrap.appendChild(buildImgOverlay(page.id, 'articleImage', 'Left Image'));
   left.appendChild(imgWrap);
 
@@ -3909,7 +3943,7 @@ function buildSidebarFields(body, page) {
   });
   const sbX = addSliderField(body, 'Position: Left / Right', 'articleImageX', page.articleImageX != null ? page.articleImageX : 50);
   const sbY = addSliderField(body, 'Position: Up / Down',   'articleImageY', page.articleImageY != null ? page.articleImageY : 50);
-  const sbZ = addSliderField(body, 'Zoom', 'articleImageZoom', page.articleImageZoom != null ? page.articleImageZoom : 100, 80, 200);
+  const sbZ = addSliderField(body, 'Zoom', 'articleImageZoom', page.articleImageZoom != null ? page.articleImageZoom : 150, 100, 300);
   bindImgSliders(page, 'articleImage', sbX, sbY, sbZ);
 
   // ── EXTRA IMAGE (optional) ──
@@ -3962,7 +3996,7 @@ function buildSidebarFields(body, page) {
     const lr = mkEl('div', 'slider-label-row');
     lr.appendChild(mkEl('label', '', `Paragraph ${i + 1}`));
     const rb = mkEl('button', 'btn-remove-para', '✕'); rb.type = 'button';
-    rb.onclick = () => { wrap.remove(); container.querySelectorAll('.vision-para-wrap').forEach((w, j) => { w.querySelector('label').textContent = `Paragraph ${j+1}`; w.querySelector('textarea').dataset.field = `sbPara${j}`; }); };
+    rb.onclick = () => { wrap.classList.add('para-crossed-out'); setTimeout(() => { wrap.remove(); container.querySelectorAll('.vision-para-wrap').forEach((w, j) => { w.querySelector('label').textContent = `Paragraph ${j+1}`; w.querySelector('textarea').dataset.field = `sbPara${j}`; }); savePanelSilent(); }, 400); };
     lr.appendChild(rb); wrap.appendChild(lr);
     const ta = document.createElement('textarea'); ta.className = 'field-input'; ta.rows = 3;
     ta.dataset.field = `sbPara${i}`; ta.value = val || ''; wrap.appendChild(ta);
@@ -4473,16 +4507,27 @@ async function applyImage() {
   let imageUrl = '';
 
   if (fileInput.files && fileInput.files[0]) {
-    const fd = new FormData();
-    fd.append('image', fileInput.files[0]);
-    try {
-      const res = await fetch('/api/upload', { method: 'POST', body: fd });
-      const data = await res.json();
-      imageUrl = data.url;
-    } catch (e) {
-      showToast('Upload failed', 'error');
-      return;
+    const file = fileInput.files[0];
+    let imageData = null;
+    for (let attempt = 1; attempt <= 3; attempt++) {
+      try {
+        const fd = new FormData();
+        fd.append('image', file);
+        const res = await fetch('/api/upload', { method: 'POST', body: fd });
+        const data = await res.json();
+        if (!res.ok || !data.url) {
+          if (attempt === 3) { showToast('Upload failed: ' + (data.error || `Server error ${res.status}`), 'error'); return; }
+          await new Promise(r => setTimeout(r, 800));
+          continue;
+        }
+        imageData = data.url;
+        break;
+      } catch (e) {
+        if (attempt === 3) { showToast('Upload failed: server not responding. Please restart the server.', 'error'); return; }
+        await new Promise(r => setTimeout(r, 800));
+      }
     }
+    imageUrl = imageData;
   } else if (urlInput.value.trim()) {
     imageUrl = urlInput.value.trim();
   } else {
@@ -4976,7 +5021,7 @@ function buildWidetextFields(body, page) {
     const lr = mkEl('div', 'slider-label-row');
     lr.appendChild(mkEl('label', '', `Paragraph ${i + 1}`));
     const rb = mkEl('button', 'btn-remove-para', '✕'); rb.type = 'button';
-    rb.onclick = () => { wrap.remove(); parasContainer.querySelectorAll('.vision-para-wrap').forEach((w, j) => { w.querySelector('label').textContent = `Paragraph ${j+1}`; w.querySelector('textarea').dataset.field = `widetextPara${j}`; }); };
+    rb.onclick = () => { wrap.classList.add('para-crossed-out'); setTimeout(() => { wrap.remove(); parasContainer.querySelectorAll('.vision-para-wrap').forEach((w, j) => { w.querySelector('label').textContent = `Paragraph ${j+1}`; w.querySelector('textarea').dataset.field = `widetextPara${j}`; }); savePanelSilent(); }, 400); };
     lr.appendChild(rb); wrap.appendChild(lr);
     const ta = document.createElement('textarea'); ta.className = 'field-input'; ta.rows = 3;
     ta.dataset.field = `widetextPara${i}`; ta.value = val || ''; wrap.appendChild(ta);

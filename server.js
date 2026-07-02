@@ -241,6 +241,8 @@ app.get('/api/export', async (req, res) => {
 
   } catch (err) {
     console.error('[export]', err.message);
+    // Reset browser so next request starts fresh
+    if (_browser) { _browser.close().catch(() => {}); _browser = null; }
     if (!res.headersSent) res.status(500).json({ error: err.message });
   } finally {
     if (pg) await pg.close().catch(() => {});

@@ -1675,6 +1675,31 @@ body {
 }
 .btn-remove-para:hover { color: rgba(228,2,45,0.8); }
 
+.vision-para-wrap.para-crossed-out {
+  position: relative;
+  opacity: 0.4;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+.vision-para-wrap.para-crossed-out textarea {
+  text-decoration: line-through;
+  color: rgba(228,2,45,0.7);
+}
+.vision-para-wrap.para-crossed-out::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(228,2,45,0.7);
+  animation: strike-through 0.3s ease forwards;
+}
+@keyframes strike-through {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
 /* ─── Edit panel fields ─── */
 .field-section-title {
   font-size: 7px;
