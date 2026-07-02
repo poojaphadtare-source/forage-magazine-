@@ -878,10 +878,7 @@
       "2020 yılında yayımlanan Boğaz'da Bir Gayrimenkul Feneri adlı kitabıyla düşünce liderliğini daha da pekiştiren Özcan, onlarca yıllık deneyiminden yola çıkarak etik emlak danışmanlığı, pazar uzmanlığı ve kalıcı müşteri ilişkilerinin temel ilkelerini ele aldı.",
       "Ulvi Özcan için gayrimenkul, hiçbir zaman yalnızca alım satımdan ibaret olmadı; her zaman güven inşa etmek, topluluklar oluşturmak ve mesleki standartları yükseltmek anlamına geldi.",
       "\nLiderlik anlayışı, dürüstlük, yenilikçilik ve iş birliğine olan bağlılığını her zaman yansıttı; hem meslektaşlarına hem de yeni nesil gayrimenkul profesyonellerine ilham verdi.",
-      "Türkiye gayrimenkul sektörü gelişmeye devam ederken, Ulvi Özcan bu dönüşümün itici güçlerinden biri olmayı sürdürüyor. Onun mirası yalnızca liderlik ettiği kurumlar veya ulaştığı başarılarla değil; kazandığı güven, savunduğu değerler ve sektörde bırakmaya devam ettiği kalıcı etkiyle tanımlanıyor.",
-      "",
-      "",
-      ""
+      "Türkiye gayrimenkul sektörü gelişmeye devam ederken, Ulvi Özcan bu dönüşümün itici güçlerinden biri olmayı sürdürüyor. Onun mirası yalnızca liderlik ettiği kurumlar veya ulaştığı başarılarla değil; kazandığı güven, savunduğu değerler ve sektörde bırakmaya devam ettiği kalıcı etkiyle tanımlanıyor."
     ],
     "pullQuote": "\"Real estate is not defined by the properties we sell, but by the trust we build, the communities we strengthen, and the legacy we leave behind.\"",
     "pullQuoteAuthor": "",
@@ -895,7 +892,8 @@
     "heroImageZoom": 100,
     "articleImageX": 89,
     "articleImageY": 0,
-    "articleImageZoom": 100
+    "articleImageZoom": 100,
+    "vsHeroOverlay": false
   },
   {
     "id": "p177883200646528827",
