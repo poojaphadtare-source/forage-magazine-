@@ -1796,6 +1796,75 @@
     "ivParaGap": 5
   },
   {
+    "id": "p178297653524348763",
+    "type": "interview",
+    "accentColor": "#E4022D",
+    "articleImage": "/images/1781764719898.png",
+    "agency": "FOMO",
+    "personName": "Johannes Kyprianou",
+    "personTitle": "Founder",
+    "articleHeadline": "Q&A : The Questions Behind the Thinking",
+    "articleSubheadline": "Inside the Mind of Johannes Kyprianou",
+    "ivLeftThoughts": [
+      {
+        "heading": "What’s Biggest Challenge in the Marketing Industry Today?",
+        "paras": [
+          "the industry today. While AI is an incredibly powerful tool, finding the right balance between cost efficiency and ethical implementation remains a key consideration for businesses."
+        ]
+      },
+      {
+        "heading": "What Major Trend Is Shaping the Industry?",
+        "paras": [
+          "AI-driven answers are delivering significantly stronger results than traditional digital advertising channels. For us, AI answers convert 77 times higher than Meta Ads, which was previously our highest-converting channel. This shift clearly signals that AI is becoming a major force in digital growth."
+        ]
+      },
+      {
+        "heading": "Where Is the Industry Heading?",
+        "paras": [
+          "The industry is becoming far more competitive. In the past, businesses could gain an advantage by targeting specific keywords. Today, AI systems have a much deeper semantic understanding than traditional search crawlers and rerankers, changing how visibility and competitiveness are achieved online."
+        ]
+      },
+      {
+        "heading": "One Piece of Advice for Businesses Today",
+        "paras": [
+          "Start focusing on ranking in AI search and answer engines as early as possible. Being mentioned in AI-generated answers today can create long-term momentum and significantly strengthen digital visibility in the future."
+        ]
+      },
+      {
+        "heading": "What’s the Prediction for the Next 2–5 Years?",
+        "paras": [
+          "Companies that are not mentioned in AI-generated answers will struggle to compete digitally. As AI becomes a primary source of information discovery, visibility within these systems will be essential for maintaining a competitive presence online."
+        ]
+      },
+      {
+        "heading": "What Trend Has Helped Cology Digital Tackle Challenges?",
+        "paras": [
+          "The adoption of OpenClaw and Hermes Agents has had a major impact on our business. These self-improving, looping AI agents automate reporting processes, generating weekly reports without manual effort. Tasks that previously required up to two full working days from an employee can now be completed automatically, allowing us to scale operations significantly without increasing headcount."
+        ]
+      }
+    ],
+    "ivRightThoughts": [
+      {
+        "heading": "",
+        "body": ""
+      },
+      {
+        "heading": "",
+        "body": ""
+      }
+    ],
+    "coverColor": "#0B0F14",
+    "articleImageZoom": 102,
+    "articleImageX": 100,
+    "articleImageY": 12,
+    "pageLabel": "PAGE 03",
+    "ivTitleSize": 27,
+    "ivTitleLh": 15,
+    "ivSubheadingLh": 15,
+    "ivBannerLabel": "WITH",
+    "ivParaGap": 5
+  },
+  {
     "id": "p177875031955991657",
     "type": "interview",
     "accentColor": "#E4022D",
