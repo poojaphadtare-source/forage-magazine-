@@ -4019,8 +4019,8 @@
     "teamParaGap": 11,
     "teamShowImg1": true,
     "teamShowImg2": false,
-    "teamQuoteSize": 9,
-    "teamQuoteMt": -10
+    "teamQuoteSize": 8,
+    "teamQuoteMt": -66
   },
   {
     "type": "spotlight",
