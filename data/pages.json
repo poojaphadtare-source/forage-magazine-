@@ -4019,7 +4019,7 @@
     "teamLineHeight": 1.8,
     "teamParaGap": 6,
     "teamShowImg1": true,
-    "teamShowImg2": true,
+    "teamShowImg2": false,
     "teamQuoteSize": 11
   },
   {
