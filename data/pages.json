@@ -4014,13 +4014,13 @@
     "pageLabel": "PAGE 02",
     "teamShowQuote": true,
     "teamImg1H": 208,
-    "teamImg2H": 230,
+    "teamImg2H": 205,
     "teamLineHeight": 1.85,
     "teamParaGap": 11,
     "teamShowImg1": true,
     "teamShowImg2": false,
-    "teamQuoteSize": 9,
-    "teamQuoteMt": -10
+    "teamQuoteSize": 8,
+    "teamQuoteMt": -66
   },
   {
     "type": "spotlight",
