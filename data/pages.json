@@ -4050,7 +4050,9 @@
     "teamImg1H": 208,
     "teamImg2H": 230,
     "teamLineHeight": 1.85,
-    "teamParaGap": 11
+    "teamParaGap": 11,
+    "teamShowImg1": true,
+    "teamShowImg2": false
   },
   {
     "type": "spotlight",
