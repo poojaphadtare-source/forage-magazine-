@@ -4016,7 +4016,7 @@
     "teamImg1H": 208,
     "teamImg2H": 205,
     "teamLineHeight": 1.85,
-    "teamParaGap": 11,
+    "teamParaGap": 10,
     "teamShowImg1": true,
     "teamShowImg2": false,
     "teamQuoteSize": 8,
