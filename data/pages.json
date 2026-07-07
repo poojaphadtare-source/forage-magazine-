@@ -2677,6 +2677,20 @@
     "pageLabel": "<br>"
   },
   {
+    "id": "p178342084692230154",
+    "type": "gallery",
+    "coverColor": "#0B0F14",
+    "accentColor": "#E4022D",
+    "articleImage": "/images/1783420742998.jpg",
+    "agency": "Boğaziçi köprüsü  Asya ve Avrupa kıtalarını birbirine bağlayan ilk asma köprüdür.",
+    "articleHeadline": "Boğaziçi Köprüsü",
+    "personLocation": "Şuanda Boğazın üzerinde 3 köprü bulunmaktadır.  ",
+    "articleImageZoom": 103,
+    "articleImageX": 0,
+    "articleImageY": 25,
+    "pageLabel": "<br>"
+  },
+  {
     "id": "p178142460795588789",
     "type": "gallery",
     "coverColor": "#0B0F14",
