@@ -2928,7 +2928,7 @@ body {
   outline: none;
 }
 .team-quote-box {
-  margin-top: 12px;
+  margin-top: var(--team-quote-mt, 12px);
   border-left: 3px solid #E4022D;
   background: linear-gradient(to right, rgba(228,2,45,0.05), transparent 80%);
   padding: 10px 12px 11px;
@@ -2937,7 +2937,7 @@ body {
 .team-quote-text {
   font-family: 'Newsreader', serif;
   font-style: italic;
-  font-size: 11px;
+  font-size: var(--team-quote-size, 11px);
   line-height: 1.55;
   color: #0B0F14;
   outline: none;

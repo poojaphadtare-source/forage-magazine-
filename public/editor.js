@@ -48,6 +48,14 @@ async function boot() {
     state.folders = await fRes.json();
     renderAll();
     bindUI();
+    // Restore last viewed page
+    const lastId = localStorage.getItem('forage_last_page');
+    if (lastId) setTimeout(() => scrollToPage(lastId), 150);
+    // Track current page via IntersectionObserver
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) localStorage.setItem('forage_last_page', e.target.dataset.pageId); });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.page-wrapper[data-page-id]').forEach(el => observer.observe(el));
   } catch (e) {
     showToast('Failed to load. Is the server running?', 'error');
   }
@@ -1523,21 +1531,27 @@ function buildTeamPage(page, index) {
   div.style.setProperty('--team-para-gap', `${page.teamParaGap != null ? page.teamParaGap : 7}px`);
   div.style.setProperty('--team-img1-h', `${page.teamImg1H != null ? page.teamImg1H : 245}px`);
   div.style.setProperty('--team-img2-h', `${page.teamImg2H != null ? page.teamImg2H : 245}px`);
+  div.style.setProperty('--team-quote-size', `${page.teamQuoteSize != null ? page.teamQuoteSize : 11}px`);
+  div.style.setProperty('--team-quote-mt', `${page.teamQuoteMt != null ? page.teamQuoteMt : 12}px`);
 
   // ── Image 1 — full-width landscape ──
-  const img1 = mkEl('div', 'team-img');
-  img1.appendChild(buildImgLayer(page, 'teamImg1', 'teamImg1X', 'teamImg1Y', 'teamImg1Zoom'));
-  img1.appendChild(buildImgOverlay(page.id, 'teamImg1', 'Top Image'));
-  div.appendChild(img1);
+  if (page.teamShowImg1 !== false) {
+    const img1 = mkEl('div', 'team-img');
+    img1.appendChild(buildImgLayer(page, 'teamImg1', 'teamImg1X', 'teamImg1Y', 'teamImg1Zoom'));
+    img1.appendChild(buildImgOverlay(page.id, 'teamImg1', 'Top Image'));
+    div.appendChild(img1);
+  }
 
   // ── Gap ──
-  div.appendChild(mkEl('div', 'team-gap'));
+  if (page.teamShowImg1 !== false && page.teamShowImg2 !== false) div.appendChild(mkEl('div', 'team-gap'));
 
   // ── Image 2 — full-width landscape ──
-  const img2 = mkEl('div', 'team-img');
-  img2.appendChild(buildImgLayer(page, 'teamImg2', 'teamImg2X', 'teamImg2Y', 'teamImg2Zoom'));
-  img2.appendChild(buildImgOverlay(page.id, 'teamImg2', 'Bottom Image'));
-  div.appendChild(img2);
+  if (page.teamShowImg2 !== false) {
+    const img2 = mkEl('div', 'team-img');
+    img2.appendChild(buildImgLayer(page, 'teamImg2', 'teamImg2X', 'teamImg2Y', 'teamImg2Zoom'));
+    img2.appendChild(buildImgOverlay(page.id, 'teamImg2', 'Bottom Image'));
+    div.appendChild(img2);
+  }
 
   // ── Text section: heading + paragraphs ──
   const text = mkEl('div', 'team-text');
@@ -2255,6 +2269,7 @@ function savePanel() {
   if (body.querySelector('[data-field^="visionPara"]'))        page.visionParas      = [];
   if (body.querySelector('[data-field^="sbPara"]'))            page.sbParas          = [];
   if (body.querySelector('[data-field^="widetextPara"]'))     page.visionParas      = [];
+  if (body.querySelector('[data-field^="artBodyPara"]'))      page.articleBody      = [];
 
   // Collect scalar fields (input, textarea with data-field)
   body.querySelectorAll('[data-field]').forEach(inp => {
@@ -2445,6 +2460,10 @@ function savePanelSilent() {
       const i = parseInt(field.replace('sbPara', ''), 10);
       if (!page.sbParas) page.sbParas = [];
       page.sbParas[i] = inp.value;
+    } else if (field.startsWith('artBodyPara')) {
+      const i = parseInt(field.replace('artBodyPara', ''), 10);
+      if (!page.articleBody) page.articleBody = [];
+      page.articleBody[i] = inp.value;
     } else if (field.startsWith('widetextPara')) {
       const i = parseInt(field.replace('widetextPara', ''), 10);
       if (!page.visionParas) page.visionParas = [];
@@ -2738,11 +2757,22 @@ function buildArticleFields(body, page) {
     lr.appendChild(mkEl('label', '', `Paragraph ${i + 1}`));
     const rb = mkEl('button', 'btn-remove-para', '✕'); rb.type = 'button';
     rb.onclick = () => {
-      wrap.remove();
-      bodyParasContainer.querySelectorAll('.vision-para-wrap').forEach((w, j) => {
-        w.querySelector('label').textContent = `Paragraph ${j + 1}`;
-        w.querySelector('textarea').dataset.field = `artBodyPara${j}`;
-      });
+      // Find the current index of this wrap in the container
+      const idx = Array.from(bodyParasContainer.querySelectorAll('.vision-para-wrap')).indexOf(wrap);
+      wrap.classList.add('para-crossed-out');
+      setTimeout(() => {
+        // Remove from data first
+        if (!page.articleBody || !page.articleBody.length) page.articleBody = [...bodyParas];
+        page.articleBody.splice(idx, 1);
+        // Remove from DOM and renumber
+        wrap.remove();
+        bodyParasContainer.querySelectorAll('.vision-para-wrap').forEach((w, j) => {
+          w.querySelector('label').textContent = `Paragraph ${j + 1}`;
+          w.querySelector('textarea').dataset.field = `artBodyPara${j}`;
+        });
+        savePages(true);
+        renderAll();
+      }, 400);
     };
     lr.appendChild(rb); wrap.appendChild(lr);
     const ta = document.createElement('textarea'); ta.className = 'field-input'; ta.rows = 4;
@@ -4283,6 +4313,15 @@ function buildDuoFields(body, page) {
 function buildTeamFields(body, page) {
   // ── Top image ──
   addSectionTitle(body, 'TOP IMAGE');
+  const t1TogWrap = mkEl('div', 'field-group');
+  const t1TogLbl = mkEl('label', 'toggle-label');
+  const t1Chk = document.createElement('input');
+  t1Chk.type = 'checkbox'; t1Chk.dataset.field = 'teamShowImg1';
+  t1Chk.checked = page.teamShowImg1 !== false;
+  t1TogLbl.appendChild(t1Chk);
+  t1TogLbl.appendChild(document.createTextNode(' Show Top Image'));
+  t1TogWrap.appendChild(t1TogLbl);
+  body.appendChild(t1TogWrap);
   addImageFieldBtn(body, page.id, 'teamImg1', 'Top Image');
   const t1H = addSliderField(body, 'Banner Height', 'teamImg1H', page.teamImg1H != null ? page.teamImg1H : 245, 80, 500);
   t1H.addEventListener('input', () => {
@@ -4298,6 +4337,15 @@ function buildTeamFields(body, page) {
 
   // ── Bottom image ──
   addSectionTitle(body, 'BOTTOM IMAGE');
+  const t2TogWrap = mkEl('div', 'field-group');
+  const t2TogLbl = mkEl('label', 'toggle-label');
+  const t2Chk = document.createElement('input');
+  t2Chk.type = 'checkbox'; t2Chk.dataset.field = 'teamShowImg2';
+  t2Chk.checked = page.teamShowImg2 !== false;
+  t2TogLbl.appendChild(t2Chk);
+  t2TogLbl.appendChild(document.createTextNode(' Show Bottom Image'));
+  t2TogWrap.appendChild(t2TogLbl);
+  body.appendChild(t2TogWrap);
   addImageFieldBtn(body, page.id, 'teamImg2', 'Bottom Image');
   const t2H = addSliderField(body, 'Banner Height', 'teamImg2H', page.teamImg2H != null ? page.teamImg2H : 245, 80, 500);
   t2H.addEventListener('input', () => {
@@ -4376,6 +4424,16 @@ function buildTeamFields(body, page) {
   body.appendChild(showQWrap);
   const pqTa = addField(body, 'Quote Text', 'pullQuote', page.pullQuote || '', 'textarea');
   pqTa.rows = 3;
+  const tqSz = addSliderField(body, 'Quote Font Size', 'teamQuoteSize', page.teamQuoteSize != null ? page.teamQuoteSize : 11, 7, 24);
+  tqSz.addEventListener('input', () => {
+    const pageEl = document.querySelector(`.mag-page[data-page-id="${page.id}"]`);
+    if (pageEl) pageEl.style.setProperty('--team-quote-size', `${tqSz.value}px`);
+  });
+  const tqMt = addSliderField(body, 'Quote Box Position: Up / Down', 'teamQuoteMt', page.teamQuoteMt != null ? page.teamQuoteMt : 12, -200, 200);
+  tqMt.addEventListener('input', () => {
+    const pageEl = document.querySelector(`.mag-page[data-page-id="${page.id}"]`);
+    if (pageEl) pageEl.style.setProperty('--team-quote-mt', `${tqMt.value}px`);
+  });
 }
 
 function addQAEditor(parent, questions) {
