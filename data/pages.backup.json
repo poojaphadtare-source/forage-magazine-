@@ -4667,7 +4667,7 @@
     "edLabel": "TUF INTERNATIONAL",
     "wtParaGap": 11,
     "wtBannerHeight": 446,
-    "wtHeroOverlay": false
+    "wtHeroOverlay": true
   },
   {
     "type": "widetext",
