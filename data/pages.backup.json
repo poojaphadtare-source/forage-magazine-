@@ -5635,7 +5635,7 @@
     "accentColor": "#E4022D",
     "heroImage": "/images/1784711615687.jfif",
     "heroImageX": 0,
-    "heroImageY": 66,
+    "heroImageY": 68,
     "heroImageZoom": 101,
     "articleHeadline": "Built in the Field: The Culture Behind TUF International",
     "visionParas": [
@@ -5659,8 +5659,8 @@
     "pageLabel": "PAGE 07",
     "edLabel": "TUF INTERNATIONAL",
     "edDate": "JULY 2026",
-    "wtBannerHeight": 374,
-    "wtParaGap": 11,
+    "wtBannerHeight": 238,
+    "wtParaGap": 9,
     "wtHeroOverlay": true
   },
   {
