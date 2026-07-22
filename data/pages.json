@@ -4666,7 +4666,8 @@
     "edDate": "JULY 2026",
     "edLabel": "TUF INTERNATIONAL",
     "wtParaGap": 11,
-    "wtBannerHeight": 446
+    "wtBannerHeight": 446,
+    "wtHeroOverlay": true
   },
   {
     "type": "widetext",

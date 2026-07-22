@@ -4643,7 +4643,7 @@
   {
     "type": "widetext",
     "accentColor": "#E4022D",
-    "heroImage": "/images/1781757098300.jpg",
+    "heroImage": "/images/1784703637235.png",
     "heroImageX": 74,
     "heroImageY": 60,
     "heroImageZoom": 101,
@@ -4666,7 +4666,8 @@
     "edDate": "JULY 2026",
     "edLabel": "TUF INTERNATIONAL",
     "wtParaGap": 11,
-    "wtBannerHeight": 446
+    "wtBannerHeight": 446,
+    "wtHeroOverlay": false
   },
   {
     "type": "widetext",
