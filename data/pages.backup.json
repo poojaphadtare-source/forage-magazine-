@@ -4644,9 +4644,9 @@
     "type": "widetext",
     "accentColor": "#E4022D",
     "heroImage": "/images/1784703637235.png",
-    "heroImageX": 74,
-    "heroImageY": 60,
-    "heroImageZoom": 101,
+    "heroImageX": 97,
+    "heroImageY": 100,
+    "heroImageZoom": 100,
     "articleHeadline": "Scaling with Purpose: The Lessons Europe Taught TUF International",
     "visionParas": [
       "For many businesses, growth is measured by entering new markets. For TUF International, scaling across Europe has been about learning to balance innovation with discipline.",
@@ -4666,7 +4666,7 @@
     "edDate": "JULY 2026",
     "edLabel": "TUF INTERNATIONAL",
     "wtParaGap": 11,
-    "wtBannerHeight": 446,
+    "wtBannerHeight": 438,
     "wtHeroOverlay": false
   },
   {
