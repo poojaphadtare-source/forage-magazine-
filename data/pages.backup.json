@@ -6539,7 +6539,7 @@
     "articleImageY": 0,
     "articleImageZoom": 300,
     "sbImgHeight": 68,
-    "pullQuote": "",
+    "pullQuote": "\"A compelling quote that captures the essence of the article and leaves a lasting impression on the reader.\"",
     "sbQuoteWidth": 72,
     "articleHeadline": "Built Below the Surface: The Pioneer Mindset Behind TUF International",
     "sbParas": [
@@ -6557,7 +6557,7 @@
       "",
       ""
     ],
-    "sbParaGap": 8,
+    "sbParaGap": 13,
     "id": "p178470233500387512",
     "folderId": {
       "isTrusted": true
