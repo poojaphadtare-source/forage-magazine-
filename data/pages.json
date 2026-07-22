@@ -5192,6 +5192,41 @@
   {
     "type": "widetext",
     "accentColor": "#E4022D",
+    "heroImage": "/images/1782977560880.png",
+    "heroImageX": 0,
+    "heroImageY": 62,
+    "heroImageZoom": 101,
+    "articleHeadline": "Boğaziçi: Doğa, Tarih ve Kültürün Yaşam Biçimine Dönüştüğü Yer",
+    "visionParas": [
+      "<p data-start=\"0\" data-end=\"218\" class=\"PDq2pG_selectionAnchorContainer\">Boğaziçi’nin özü üç kelimeyle tanımlanacak olsa, bunlar <strong data-start=\"56\" data-end=\"81\">doğa, tarih ve kültür</strong> olurdu. Çünkü Boğaziçi yalnızca coğrafi bir konum değildir; bu üç unsurun bir araya gelerek yaşam biçimine dönüştüğü eşsiz bir bütündür. Boğaziçi’nde yaşama dair en büyük yanlış algılardan biri, buranın yalnızca gayrimenkul ve tapu üzerinden değerlendirilen bir yatırım alanı olarak görülmesidir. Oysa Boğaziçi’nde yaşamak; yalılar ve kıyılarla kurulan görünmez bir duygusal bağı, geçmişten gelen bir kültürü taşımayı ve gelecek nesillere karşı bir sorumluluğun parçası olmayı ifade eder.</p>",
+      "Yıllar içinde en belirgin ayrım, Boğaziçi’nin ruhunu anlayanlar ile yalnızca manzarasını satın alanlar arasında ortaya çıkmıştır. Birinciler kendilerini bu eşsiz dokunun emanetçileri olarak görürken, ikinciler çoğu zaman sahip oldukları şeyin yalnızca fiziksel bir varlık olduğunu fark ederler. Servet ve mülklerin hızla el değiştirmesiyle bu fark son yıllarda daha da görünür hale gelmiştir.",
+      "“Parasını verdim, aldım, istediğim her şeyi yaparım” anlayışı, zaman zaman doğal ve kültürel değerlerin tahrip edilmesine yol açmakta ve kaçınılmaz olarak Boğaziçi’nin sıkı koruma kuralları ve düzenleyici sistemiyle karşı karşıya gelmektedir. Bu noktada mülk sahipleri, sıkı bürokratik süreçler ve güçlü bir koruma çerçevesiyle karşılaşabilir. Çünkü Boğaziçi sıradan bir yatırım bölgesi değildir; burada satın alınan şey yalnızca bir yapı değil, yüzyıllara dayanan yaşayan bir kültürün parçasıdır.",
+      "Bu nedenle Boğaziçi’nde mülk sahibi olmayı düşünenlerin yalnızca manzarayı ve metrekareyi değil, beraberinde gelen sorumluluğu da iyi anlamaları gerekir. Boğaziçi, kendisini gerçekten benimseyenlere ömür boyu eşlik eder; onu yalnızca bir yatırım olarak görenlere ise kendi kurallarını hatırlatır.",
+      "Boğaziçi’ni yalnızca bir konum olmaktan çıkarıp bir yaşam biçimine dönüştüren şey, tam olarak kültür, tarih ve doğanın ayrılmaz bütünlüğüdür. Bu üç unsur, bölgeyi sadece yaşanacak bir yer değil, hissedilecek bir kimlik haline getirir.",
+      "Boğaziçi’nin ruhunu gerçekten anlayabilmek için bir ziyaretçinin en az bir kez bu deneyimi yaşaması gerekir: sabah erken saatlerde kıyıda yürümek ve akşam deniz kenarında bir balık-rakı sofrasına oturmak. Çünkü Boğaziçi’nin ruhu tek bir ana sığmaz; sabah ayrı, akşam ayrı bir hikâye anlatır.",
+      "Günün ilk ışıklarında martı sesleri, denizin kokusu ve yalıların üzerine düşen gün doğumu Boğaziçi’ni sakin ve bilge bir atmosfere dönüştürür. O anlarda Boğaziçi, insanla baş başa kalır ve geçmişten gelen hikâyelerini fısıldar.",
+      "Akşam olduğunda ise tamamen farklı bir kimliğe bürünür. Kıyıda bir rakı-balık sofrasında, ışıkların suya yansıdığı ve vapurların yavaşça süzüldüğü anlarda Boğaziçi’nin gerçek güzelliği ortaya çıkar. Bu güzellik yalnızca manzarada değil; paylaşılan sohbetlerde, dostluklarda ve anılardadır. Bir kadeh kaldırılır—bazen eski bir dosta, bazen bir hatıraya, bazen de sadece o ana. Ve o anda anlaşılır ki Boğaziçi yalnızca görülecek bir yer değil, yaşanacak bir duygudur. Sabah şehri gösterir, akşam ise insanın kalbine dokunur.",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "pullQuote": "An inspiring quote that captures the vision and philosophy of the agency and its people.",
+    "id": "p178470007959870431",
+    "folderId": {
+      "isTrusted": true
+    },
+    "coverColor": "#0B0F14",
+    "pageLabel": "SAYFA 06",
+    "edDate": "Temmuz 2026",
+    "edLabel": "Ulvi ÖZCAN",
+    "wtParaGap": 12,
+    "wtBannerHeight": 253,
+    "wtHeroOverlay": true
+  },
+  {
+    "type": "widetext",
+    "accentColor": "#E4022D",
     "heroImage": "/images/1781783424994.jpg",
     "heroImageX": 0,
     "heroImageY": 100,
