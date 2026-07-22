@@ -5631,6 +5631,39 @@
     "wtHeroOverlay": true
   },
   {
+    "type": "widetext",
+    "accentColor": "#E4022D",
+    "heroImage": "/images/1781763516345.jpg",
+    "heroImageX": 0,
+    "heroImageY": 66,
+    "heroImageZoom": 101,
+    "articleHeadline": "From Digital Skepticism to Industry Authority: A 10x Growth Story",
+    "visionParas": [
+      "Not every business immediately believes in the power of digital marketing. When this client first approached Lead Fabriken, they had already tried various ways to generate growth but were struggling to gain momentum. Leads were arriving slowly, conversion rates remained low, and there was a growing belief that digital channels simply weren't capable of delivering meaningful business results.",
+      "To address this, Lead Fabriken completely reworked the company's digital strategy. Understanding that long-term digital success requires a combination of immediate and sustainable tactics, the team implemented a structured approach that balanced short-term results with long-term growth.",
+      "The process began with improving the company's website through Conversion Rate Optimization (CRO). This ensured that any traffic driven to the site would have the best possible chance of converting into valuable leads. Once the website was optimized, Lead Fabriken launched a targeted Pay-Per-Click (PPC) strategy to generate immediate visibility and traffic.",
+      "At the same time, a comprehensive Search Engine Optimization (SEO) strategy was put in place to build long-term organic growth and authority. As organic performance increased, reliance on paid advertising gradually reduced.",
+      "The results were remarkable. Within just three months, the company experienced a tenfold increase in website traffic and successfully improved lead conversions. Over time, the business established a much stronger online presence, increased its authority within the market, and became the go-to source in its industry across both search engines and AI-powered answer platforms.",
+      "One of the biggest lessons from the project was clear: every business has the potential to succeed in the digital space. The key lies in identifying the right digital marketing strategy and implementing it in a way that aligns with the company's goals, audience, and growth ambitions.",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "pullQuote": "An inspiring quote that captures the vision and philosophy of the agency and its people.",
+    "id": "p178471146471058309",
+    "folderId": {
+      "isTrusted": true
+    },
+    "coverColor": "#0B0F14",
+    "pageLabel": "PAGE 07",
+    "edLabel": "Agency Feature",
+    "edDate": "JUNE 2026",
+    "wtBannerHeight": 374,
+    "wtParaGap": 11,
+    "wtHeroOverlay": true
+  },
+  {
     "type": "showcase2",
     "accentColor": "#E4022D",
     "articleHeadline": "Data-Driven Growth: Turning Online Success Into a Structured System",
