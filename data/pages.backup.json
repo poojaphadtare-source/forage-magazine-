@@ -1748,11 +1748,11 @@
     "articleImageX": 60,
     "articleImageY": 37,
     "pageLabel": "PAGE 95",
-    "ivTitleSize": 22,
-    "ivTitleLh": 14,
-    "ivSubheadingLh": 19,
+    "ivTitleSize": 24,
+    "ivTitleLh": 21,
+    "ivSubheadingLh": 25,
     "ivBannerLabel": "WITH",
-    "ivParaGap": 3
+    "ivParaGap": 6
   },
   {
     "id": "p178176371979056418",
