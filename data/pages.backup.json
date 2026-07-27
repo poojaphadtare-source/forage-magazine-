@@ -4968,6 +4968,35 @@
   {
     "type": "widetext",
     "accentColor": "#E4022D",
+    "heroImage": "/images/1784703637235.png",
+    "heroImageX": 97,
+    "heroImageY": 100,
+    "heroImageZoom": 100,
+    "articleHeadline": "Scaling with Purpose: The Lessons Europe Taught TUF International",
+    "visionParas": [
+      "For many businesses, growth is measured by entering new markets. For TUF International, scaling across Europe has been about learning to balance innovation with discipline.",
+      "According to CEO & Founder Thomas Hochstrate, one of the biggest lessons is that innovation must be able to survive regulation. Europe presents a unique business environment where every country has its own rules, expectations, languages, and business culture. In the commercial diving industry, this is further shaped by strict safety standards, documentation, and compliance requirements.",
+      "Rather than viewing these demands as obstacles, TUF International sees them as opportunities to become stronger. Operating across Europe has reinforced the importance of proving that a pioneering mindset is not only bold, but also dependable.",
+      "The experience has taught the company that creativity must be supported by documentation, speed must be matched with compliance, and flexibility must be strengthened by structure. Success is not achieved by choosing one over the other, but by maintaining the right balance between them.",
+      "For TUF International, scaling in Europe has been more than a business milestone—it has shaped the way the company operates. It has reinforced the ability to remain entrepreneurial while consistently delivering the professionalism, reliability, and high standards that clients expect across international projects.",
+      ""
+    ],
+    "pullQuote": "An inspiring quote that captures the vision and philosophy of the agency and its people.",
+    "id": "p178515216943727166",
+    "folderId": {
+      "isTrusted": true
+    },
+    "coverColor": "#0B0F14",
+    "pageLabel": "PAGE 02",
+    "edDate": "JULY 2026",
+    "edLabel": "TUF INTERNATIONAL",
+    "wtParaGap": 15,
+    "wtBannerHeight": 438,
+    "wtHeroOverlay": false
+  },
+  {
+    "type": "widetext",
+    "accentColor": "#E4022D",
     "heroImage": "/images/1779104084711.jpg",
     "heroImageX": 98,
     "heroImageY": 39,
